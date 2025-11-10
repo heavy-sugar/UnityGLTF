@@ -23,7 +23,7 @@ namespace UnityGLTF
                 // parse the glTF file, append an entry to the materials list
                 var subAssets = AssetDatabase.LoadAllAssetsAtPath(assetPath).Where(x => x is Material).Cast<Material>().ToList();
                 var count = subAssets.Count;
-                var newMaterial = new Material(Shader.Find("UnityGLTF/PBRGraph"));
+                var newMaterial = new Material(Shader.Find("UnityGLTF/PBRGraph-custom"));
                 newMaterial.name = $"Material {count}";
                 subAssets.Add(newMaterial);
 
@@ -86,7 +86,7 @@ namespace UnityGLTF
                 var addedMaterials = new List<Material>();
                 foreach (var item in addedItems)
                 {
-                    var mat = new Material(Shader.Find("UnityGLTF/PBRGraph"));
+                    var mat = new Material(Shader.Find("UnityGLTF/PBRGraph-custom"));
                     addedMaterials.Add(mat);
                 }
                 MaterialEditorBridge.SaveAssetWithMaterials(AssetDatabase.GetAssetPath(target), materials.Concat(addedMaterials).ToList());

@@ -6,7 +6,7 @@ namespace UnityGLTF
 	{
 		internal const string PBRGraphGuid = "478ce3626be7a5f4ea58d6b13f05a2e4";
 
-		public PBRGraphMap() : this("UnityGLTF/PBRGraph") {}
+		public PBRGraphMap() : this("UnityGLTF/PBRGraph-custom") {}
 
 		protected PBRGraphMap(string shaderName) : base(shaderName, PBRGraphGuid) { }
 
@@ -16,7 +16,7 @@ namespace UnityGLTF
 		private const string PBRGraphDoubleGuid = "8bc739b14fe811644abb82057b363ba8";
 
 		public PBRGraphMap(bool transparent, bool doubleSided) : base(
-			"UnityGLTF/PBRGraph" + (transparent ? "-Transparent" : "") + (doubleSided ? "-Double" : ""),
+			"UnityGLTF/PBRGraph-custom" + (transparent ? "-Transparent" : "") + (doubleSided ? "-Double" : ""),
 			(transparent && doubleSided ? PBRGraphTransparentDoubleGuid : transparent ? PBRGraphTransparentGuid : doubleSided ? PBRGraphDoubleGuid : PBRGraphGuid)) { }
 #endif
 

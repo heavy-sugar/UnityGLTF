@@ -22,7 +22,7 @@ namespace UnityGLTF
 		private static bool ConvertUnityGLTFGraphs(Material material, Shader oldShader, Shader newShader)
 		{
 			// update legacy shaders that didn't have material overrides available
-			if (oldShader.name.StartsWith("Hidden/UnityGLTF/PBRGraph") || oldShader.name.StartsWith("Hidden/UnityGLTF/UnlitGraph"))
+			if (oldShader.name.StartsWith("Hidden/UnityGLTF/PBRGraph-custom") || oldShader.name.StartsWith("Hidden/UnityGLTF/UnlitGraph"))
 			{
 				material.shader = newShader;
 
@@ -47,7 +47,7 @@ namespace UnityGLTF
 				return true;
 			}
 
-			if (oldShader.name != "UnityGLTF/UnlitGraph" && oldShader.name != "UnityGLTF/PBRGraph") return false;
+			if (oldShader.name != "UnityGLTF/UnlitGraph" && oldShader.name != "UnityGLTF/PBRGraph-custom") return false;
 
 			material.shader = newShader;
 			return true;

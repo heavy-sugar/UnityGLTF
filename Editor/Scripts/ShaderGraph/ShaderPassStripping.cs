@@ -51,7 +51,7 @@ namespace UnityGLTF
         public void OnProcessShader(
             Shader shader, ShaderSnippetData snippet, IList<ShaderCompilerData> data)
         {
-            if (!settings.stripPassesFromAllShaders && !shader.name.Contains("UnityGLTF/PBRGraph"))
+            if (!settings.stripPassesFromAllShaders && !shader.name.Contains("UnityGLTF/PBRGraph-custom"))
                 return;
             
             if (ShouldStripPass(snippet))
